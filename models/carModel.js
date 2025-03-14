@@ -19,10 +19,6 @@ carModel.init({
       key: 'id'
     }
   },
-  brand: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   model: {
     type: DataTypes.STRING,
     allowNull: false

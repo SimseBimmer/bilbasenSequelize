@@ -1,0 +1,4 @@
+id,brand_id,category_id,model,year,price
+1,1,1,Corolla,2022,20000
+2,2,2,Focus,2021,18000
+3,3,3,320i,2023,35000

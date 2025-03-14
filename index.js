@@ -6,8 +6,7 @@ import carController from "./controllers/carController.js";
 import dbController from "./controllers/dbcontroller.js";
 import brandController from "./controllers/brandController.js";
 import categoryController from "./controllers/categoryController.js";
-import { carModel } from "./models/carModel.js"; // Importer mindst en model
-import { setRelations } from "./models/relations.js";
+import userController from "./controllers/userController.js"; 
 dotenv.config();
 
 config();
@@ -15,8 +14,6 @@ config();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-setRelations();
 
 const port = process.env.PORT || 3000;
 
@@ -61,6 +58,9 @@ app.use("/brands", brandController);
 // Include categoryController for handling category-related routes
 app.use("/categories", categoryController);
 
+// Include userController for handling user-related routes
+app.use("/users", userController); // Ensure this line is correct
+
 app.get("*", (req, res) => {
     res.json({
         message: '404'
@@ -68,5 +68,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on https://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
